@@ -162,29 +162,7 @@ External Source (included with the author's permission):
 
 ## About the Author
 
-**kangarooking** — AI blogger, indie developer. Creator of AI Top WeChat Official Account「袋鼠帝 AI 客栈」
-
-Volcengine Navigation KOL, Baidu Qianfan Developer Ambassador, GLM Evangelist, Trae Kunming's First Fellow
-
-| Platform | Link |
-|----------|------|
-| 𝕏 Twitter | https://x.com/aikangarooking |
-| Xiaohongshu | https://xhslink.com/m/5YejKvIDBbL |
-| Douyin | https://v.douyin.com/hYpsjphuuKc |
-| WeChat Official Account | 袋鼠帝 AI 客栈 |
-| WeChat Video Channel | AI 袋鼠帝 |
-
-WeChat Official Account「袋鼠帝 AI 客栈」QR code:
-
-![](https://raw.githubusercontent.com/kangarooking/cangjie-skill/main/assets/kangarooking-gzh.png)
-
-## ⭐ Star History
-
-If this project has helped you, please star it.
-
-<a href="https://www.star-history.com/?repos=kangarooking%2Fcangjie-skill&type=date&legend=top-left">
- <img alt="Star History Chart" src="./assets/star-history.svg" />
-</a>
+**kangarooking** — AI blogger, indie developer.
 
 ## License
 

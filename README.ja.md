@@ -162,30 +162,6 @@ External Source（著者本人の許可を得て掲載）:
 
 ## 作者について
 
-**袋鼠帝 kangarooking** — AI ブロガー、インディー開発者。AI Top 公式アカウント「袋鼠帝 AI 客栈」主宰
-
-Volcengine ナビゲーション KOL、Baidu Qianfan 開発者アンバサダー、GLM エバンジェリスト、Trae 昆明初代 Fellow
-
-| プラットフォーム | リンク |
-|------------------|--------|
-| 𝕏 Twitter | https://x.com/aikangarooking |
-| 小紅書 | https://xhslink.com/m/5YejKvIDBbL |
-| 抖音 | https://v.douyin.com/hYpsjphuuKc |
-| WeChat 公式アカウント | 袋鼠帝 AI 客栈 |
-| WeChat ビデオチャンネル | AI 袋鼠帝 |
-
-WeChat 公式アカウント「袋鼠帝 AI 客栈」QR コード:
-
-![](https://raw.githubusercontent.com/kangarooking/cangjie-skill/main/assets/kangarooking-gzh.png)
-
-## ⭐ Star History
-
-このプロジェクトが役に立ったら、スターをお願いします。
-
-<a href="https://www.star-history.com/?repos=kangarooking%2Fcangjie-skill&type=date&legend=top-left">
- <img alt="Star History Chart" src="./assets/star-history.svg" />
-</a>
-
 ## License
 
 MIT. See [LICENSE](./LICENSE).
