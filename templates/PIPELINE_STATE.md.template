@@ -1,0 +1,61 @@
+# {{BOOK_TITLE}} — 流水线状态 (PIPELINE_STATE)
+
+> 本文件由 extract-skill 流水线维护，用于**断点续跑**。
+> 开始前先检查本文件是否存在：存在则从记录的当前阶段续跑，不要从头重来。
+> 每完成一个阶段，更新本文件。
+
+## 基本信息
+
+- **书名**: {{BOOK_TITLE}}
+- **作者**: {{AUTHOR}}
+- **slug**: {{book-slug}}
+- **内容类型**: {{书籍 / 视频转写 / 播客 / 课程 / 访谈 / 长文}}
+- **源文件**: {{SOURCE_FILE}}
+- **开始时间**: {{START_DATE}}
+- **最后更新**: {{LAST_UPDATE}}
+
+---
+
+## 阶段进度
+
+| 阶段 | 状态 | 产出 |
+|---|---|---|
+| 0 — 整书理解 (Adler) | {{pending / in_progress / done}} | `BOOK_OVERVIEW.md` |
+| 1 — 并行提取 (5 extractors) | {{pending / in_progress / done}} | `candidates/*.md` |
+| 1.5 — 三重验证 | {{pending / in_progress / done}} | `verified.md` + `rejected/` |
+| 2 — RIA++ 构造 | {{pending / in_progress / done}} | 各 `<skill-slug>/SKILL.md` |
+| 3 — Zettelkasten 链接 | {{pending / in_progress / done}} | `INDEX.md` + `GLOSSARY.md` |
+| 4 — 压力测试 | {{pending / in_progress / done}} | 各 `test-prompts.json` + `test-results.md` |
+| 5 — 交付 | {{pending / in_progress / done}} | `DIGEST.md` + 安装到 skills 目录 |
+
+**当前阶段**: {{阶段号 — 阶段名}}
+**下一步**: {{接下来要做什么}}
+
+---
+
+## 各 skill 状态 (阶段 2 之后填写)
+
+| skill-slug | 阶段 2 (构造) | 阶段 3 (链接) | 阶段 4 (测试) | 测试通过率 | 备注 |
+|---|---|---|---|---|---|
+| {{skill-1}} | {{done}} | {{done}} | {{in_progress}} | {{%}} | {{备注}} |
+| {{skill-2}} | {{done}} | {{pending}} | {{pending}} | — | {{备注}} |
+| ... | | | | | |
+
+---
+
+## 用户确认记录
+
+- [ ] 阶段 0 完成后，用户确认骨架 (时间: {{}})
+- [ ] 阶段 1.5 完成后，用户确认入选名单 (时间: {{}})
+- [ ] 阶段 5 安装位置已确认 (时间: {{}})
+
+---
+
+## 断点续跑指引
+
+恢复执行时，主流程应：
+
+1. 读取本文件，定位到**当前阶段**
+2. 检查当前阶段的产出是否完整（如阶段 1 的 5 个 candidates/*.md 是否都在）
+3. 从当前阶段继续，不要重跑已完成的阶段
+4. 每完成一个阶段，立即更新本文件（状态 + 产出 + 下一步）

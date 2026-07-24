@@ -61,4 +61,4 @@
 > 如需持续进化,可以喂给 darwin-skill: `darwin evolve books/<slug>/`
 > 它会用这里的 test-prompts.json 做 ratcheting 自动进化。
 
-最后把 `PIPELINE_STATE.md` 标记为全部完成。
+最后按 `templates/PIPELINE_STATE.md.template` 把 `PIPELINE_STATE.md` 标记为全部完成。

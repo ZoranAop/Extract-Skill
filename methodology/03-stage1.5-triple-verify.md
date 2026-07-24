@@ -45,7 +45,7 @@
 1. 把阶段 1 的 5 个 candidates/*.md 合并成一个总候选池
 2. 去重: 同一方法论被多个 extractor 提取的,合并成一条
 3. 对每条候选跑 V1 / V2 / V3,记录判断和理由
-4. 通过的,写入 `books/<slug>/verified.md`
+4. 通过的,按 `templates/verified.md.template` 写入 `books/<slug>/verified.md`
 5. 未通过的,写入 `books/<slug>/rejected/<id>.md`,**必须写明不通过的是哪一项、原因是什么** (审计价值)
 6. **用户轻确认** ★: 把"通过的 N 个候选标题 + 淘汰的 M 个"展示给用户,问一句"这 N 个会做成 skill,有想捞回或砍掉的吗?" 得到确认再进入阶段 2 — 阶段 2–4 是全流程最耗时的部分,这一句话的成本能避免大量返工
 

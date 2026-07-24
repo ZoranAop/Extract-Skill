@@ -69,7 +69,7 @@ books/<book-slug>/
 
 ## 执行流程 (严格按顺序)
 
-**断点续跑**: 开始前先检查 `books/<slug>/PIPELINE_STATE.md` 是否存在。存在则读取并从记录的阶段续跑,不要从头重来。每完成一个阶段,更新该文件 (当前阶段 / 已完成产物 / 各 skill 状态 / 下一步),格式用简单的 checklist markdown 即可。
+**断点续跑**: 开始前先检查 `books/<slug>/PIPELINE_STATE.md` 是否存在。不存在则按 `templates/PIPELINE_STATE.md.template` 初始化。存在则读取并从记录的阶段续跑,不要从头重来。每完成一个阶段,更新该文件 (当前阶段 / 已完成产物 / 各 skill 状态 / 下一步)。
 
 ### 阶段 0 — 整书理解
 
@@ -103,7 +103,7 @@ books/<book-slug>/
 - **V2 预测力**: 能用它回答一个书里没明说的新问题吗?
 - **V3 独特性**: 不是任何聪明人都会说的常识吗?
 
-通过的写入 `books/<slug>/verified.md`。不通过的写入 `books/<slug>/rejected/` 并附原因 — 保留审计轨迹,也允许用户事后捞回。
+通过的按 `templates/verified.md.template` 写入 `books/<slug>/verified.md`。不通过的写入 `books/<slug>/rejected/` 并附原因 — 保留审计轨迹,也允许用户事后捞回。
 
 **用户轻确认** ★: 筛选完成后,把"通过的 N 个候选标题 + 淘汰的 M 个"列表展示给用户:"这 N 个会做成 skill,有想捞回或砍掉的吗?" 得到确认再进入阶段 2 — 阶段 2–4 是最耗时的部分,这一步确认能避免大量返工。
 
@@ -126,7 +126,7 @@ books/<book-slug>/
 1. 找出 skill 之间的引用关系 (A 依赖 B / A 对比 B / A 组合 B)
 2. 在每个 SKILL.md 末尾补"相关 skills"段,并回填 A2 的"与相邻 skill 的区分"
 3. 按 `templates/INDEX.md.template` 生成 `INDEX.md` (含引用图 mermaid)
-4. 把 `candidates/glossary.md` 整理成 `books/<slug>/GLOSSARY.md` — 它是所有 skill 的共享词典,不该埋在审计目录里
+4. 按 `templates/GLOSSARY.md.template` 把 `candidates/glossary.md` 整理成 `books/<slug>/GLOSSARY.md` — 它是所有 skill 的共享词典,不该埋在审计目录里
 
 ### 阶段 4 — 压力测试 (darwin 兼容)
 

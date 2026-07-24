@@ -1,23 +1,35 @@
 # Extract Skill
 
-Distill a book into a set of executable AI skills.
+Distill books, long videos, and podcasts into callable AI skills.
+
+## Core Capabilities
+
+extract-skill is not a summarization tool — it's an **agent-execution-oriented methodology distillation pipeline**. It turns methodologies in books, long videos, and podcasts into precisely callable skill packs.
+
+| Capability | What it does | Why it matters |
+|---|---|---|
+| **Triple Verification** | Cross-domain + predictive power + uniqueness checks; pass rate only 25-50% | Filters out quotes and common sense, keeps only reusable methodologies |
+| **RIA++ Structuring** | R/I/A1/A2/E/B six-dimension construction; A2 = trigger scenarios, E = executable steps, B = boundaries | Built for agent invocation, not human reading; skills trigger precisely |
+| **Pressure Testing** | Independent blind testing with bait prompts and cross-skill confusion tests | Catches trigger-accuracy issues before release, not by luck |
+| **Zettelkasten Linking** | depends-on / contrasts-with / composes-with relations + reference graph | Skills compose with each other, not isolated files |
+| **darwin Compatible** | Each skill ships with `test-prompts.json` | Output plugs directly into darwin-skill for auto-evolution |
 
 ## Why This Exists
 
-There's a recent viral idea: distilling colleagues into AI skills. Even after someone leaves, their experience, tone, and work style can be partially replicated by AI. [nuwa-skill](https://github.com/alchaincyf/nuwa-skill) does exactly this — creating "human skills" like an Elon Musk skill or a Warren Buffett skill. The companion [darwin-skill](https://github.com/alchaincyf/darwin-skill) handles automatic skill evolution.
+You might read many books, save many videos, listen to many podcasts — but struggle to apply any of it. Knowledge stays at the "I've read it" level and never activates in real decisions. Summaries, notes, and transcript cleanup are **compression**, not **reuse**: you still don't know "when to use what." And only a small fraction of high-value content deserves to become a tool — wholesale inclusion dilutes value.
 
-Distilling people is valuable — nuwa-skill has already proven this. Distilling what people have **written** is a complementary dimension: a book represents years of deliberate thinking — the distilled essence of careful reflection. Rather than imitating someone's expression style, extracting their systematically produced methodologies into tools that help people solve real problems is equally valuable.
+extract-skill has one clear goal: **distill methodologies in long-form content into callable AI skill packs**. It works not only on books but also on videos, podcasts, interviews, lectures, courses, long-form articles, and resource collections with subtitles or transcripts. As long as the content contains extractable, verifiable, transferable methodologies, extract-skill turns it into a set of independently callable, composable, and pressure-testable skills.
 
-There's also a real pain point: you might read many books but struggle to apply them. Knowledge stays at the "I've read it" level and never gets activated in real decisions. Once a book is distilled into skills, an AI agent can invoke that knowledge in real scenarios — instead of letting it gather dust in your notes.
-
-So extract-skill has one clear goal: **distill every book worth distilling**, turning each high-value book into a set of independently callable, composable, and pressure-testable AI skill packs.
+To distill video content, pair it with the [video-downloader](https://github.com/kangarooking/kangarooking-skills/tree/main/video-downloader) skill: use it to download videos and extract subtitles/audio transcripts first, then feed the text to extract-skill for methodology extraction, skill construction, and pressure testing.
 
 ## What Problems It Solves
 
-- Reading many books but never applying them — knowledge stays at "I've read it" and never activates in real decisions
-- Book summaries and reading notes are compression, not structured reuse — you still don't know "when to use what"
-- Only a small fraction of a book deserves to become a tool — strict filtering is needed, not wholesale inclusion
-- Existing reading methodologies are designed for human readers, not agent executors — distillation must be execution-oriented, not reading-oriented
+| Pain point | How extract-skill solves it |
+|---|---|
+| Read/watched a lot but can't apply it — knowledge stays at "seen it" | Produces skills with trigger conditions; agent invokes them in real scenarios |
+| Summaries/notes are compression, not structured reuse — no "when to use what" | A2 field specifies trigger scenarios + language signals; skills activate on demand |
+| Only a small fraction of content deserves to become a tool | Triple verification filters, 25-50% pass rate, removes quotes and common sense |
+| Existing methodologies target human readers, not agent executors | RIA++ structure: E = executable steps, B = boundaries; execution-oriented, not consumption-oriented |
 
 ## How It Works
 
@@ -35,6 +47,25 @@ The name RIA-TV++ breaks down as:
 - **RIA**: From Zhao Zhou's bookmark method (Reading / Interpretation / Appropriation)
 - **TV**: Triple Verification
 - **++**: Agent-oriented extensions — E (Execution) + B (Boundary)
+
+## Quick Start
+
+### Prerequisites
+
+- Claude Code, Cursor, or another agent host that supports skill loading
+- Source text to distill (PDF / EPUB / TXT / subtitle file / transcript). For videos/podcasts, transcribe first
+
+### Usage
+
+Say any of the following to your agent — extract-skill activates automatically:
+
+```
+帮我拆《穷查理宝典》
+distill this book into skills: <path>
+turn this video/podcast/course into skills
+```
+
+The pipeline starts at stage 0, reports progress after each stage, and asks for your confirmation. It supports breakpoint resumption. Full execution spec: [SKILL.md](./SKILL.md). Stage design docs: [methodology/](./methodology/).
 
 ## Effect Examples
 
@@ -117,7 +148,7 @@ extract-skill/
 ├── SKILL.md               ← Meta-skill definition (full execution spec for extract-skill)
 ├── methodology/           ← RIA-TV++ stage-by-stage methodology docs
 ├── extractors/            ← Prompt definitions for the 5 parallel extractors
-└── templates/             ← SKILL.md / INDEX.md / BOOK_OVERVIEW.md templates
+└── templates/             ← SKILL / INDEX / BOOK_OVERVIEW / DIGEST / GLOSSARY / verified / PIPELINE_STATE / test-prompts templates
 ```
 
 ## Ecosystem

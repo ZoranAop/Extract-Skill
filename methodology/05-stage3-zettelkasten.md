@@ -30,7 +30,7 @@
 4. 在每个 skill 的 SKILL.md 末尾追加"相关 skills"段,用自然语言说明关系
 5. **回填 A2**: 链接关系确定后,回到每个 skill 的 A2 段,把阶段 2 留下的"与相邻 skill 的区分"初稿改成定稿 (同时同步 frontmatter `description`)
 6. 生成 `books/<slug>/INDEX.md` (模板 `templates/INDEX.md.template`)
-7. 把 `candidates/glossary.md` 整理提升为 `books/<slug>/GLOSSARY.md` — 它是所有 skill 共享的术语词典,应在产出根目录可见,而不是埋在审计目录里; INDEX.md 中链接它
+7. 按 `templates/GLOSSARY.md.template` 把 `candidates/glossary.md` 整理提升为 `books/<slug>/GLOSSARY.md` — 它是所有 skill 共享的术语词典,应在产出根目录可见,而不是埋在审计目录里; INDEX.md 中链接它
 
 ## INDEX.md 必须包含
 
