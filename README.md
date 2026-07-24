@@ -1,6 +1,6 @@
 <div align="center">
 
-# Cangjie Skill
+# Extract Skill
 
 ### 把书、长视频、播客里的方法论，蒸馏成可调用的 AI Skills
 
