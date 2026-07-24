@@ -1,4 +1,4 @@
-# Cangjie Skill
+# Extract Skill
 
 Distill a book into a set of executable AI skills.
 
@@ -10,7 +10,7 @@ Distilling people is valuable — nuwa-skill has already proven this. Distilling
 
 There's also a real pain point: you might read many books but struggle to apply them. Knowledge stays at the "I've read it" level and never gets activated in real decisions. Once a book is distilled into skills, an AI agent can invoke that knowledge in real scenarios — instead of letting it gather dust in your notes.
 
-So cangjie-skill has one clear goal: **distill every book worth distilling**, turning each high-value book into a set of independently callable, composable, and pressure-testable AI skill packs.
+So extract-skill has one clear goal: **distill every book worth distilling**, turning each high-value book into a set of independently callable, composable, and pressure-testable AI skill packs.
 
 ## What Problems It Solves
 
@@ -21,7 +21,7 @@ So cangjie-skill has one clear goal: **distill every book worth distilling**, tu
 
 ## How It Works
 
-cangjie-skill uses the **RIA-TV++** pipeline to transform a book from raw text into a set of structured skills. The process has seven stages:
+extract-skill uses the **RIA-TV++** pipeline to transform a book from raw text into a set of structured skills. The process has seven stages:
 
 1. **Whole-Book Comprehension (Adler Analysis)** — Structural, interpretive, critical, and applicability analysis using Mortimer Adler's method, producing `BOOK_OVERVIEW.md`
 2. **Parallel Extraction** — Five specialized extractors (frameworks, principles, cases, counter-examples, glossary) run simultaneously to pull candidate units from the source text
@@ -44,7 +44,7 @@ The name RIA-TV++ breaks down as:
 
 "I want to turn a book's core methodologies into reusable AI skills, not just a reading summary."
 
-**How cangjie-skill reasons**
+**How extract-skill reasons**
 
 - Check whether the source material has reusable methodological units
 - Distinguish what deserves to be a standalone skill vs. background material
@@ -60,7 +60,7 @@ The name RIA-TV++ breaks down as:
 
 "I don't want a long explanatory article. I want a skill pack my agent can reuse."
 
-**How cangjie-skill reasons**
+**How extract-skill reasons**
 
 - Target is structured reuse, not narrative compression
 - Prioritize triggerable, composable, testable skill units
@@ -109,12 +109,12 @@ Additional external source (included with the author's permission):
 ## Repository Structure
 
 ```text
-cangjie-skill/
+extract-skill/
 ├── README.md              ← You are here
 ├── README.en.md           ← English version
 ├── README.ja.md           ← Japanese version
 ├── LICENSE                ← MIT
-├── SKILL.md               ← Meta-skill definition (full execution spec for cangjie-skill)
+├── SKILL.md               ← Meta-skill definition (full execution spec for extract-skill)
 ├── methodology/           ← RIA-TV++ stage-by-stage methodology docs
 ├── extractors/            ← Prompt definitions for the 5 parallel extractors
 └── templates/             ← SKILL.md / INDEX.md / BOOK_OVERVIEW.md templates
@@ -122,13 +122,13 @@ cangjie-skill/
 
 ## Ecosystem
 
-cangjie-skill is part of a larger skill ecosystem:
+extract-skill is part of a larger skill ecosystem:
 
 - [nuwa-skill](https://github.com/alchaincyf/nuwa-skill) — Distills people (thinking styles, expression DNA)
-- **cangjie-skill** (this repo) — Distills books (methodologies, frameworks, principles)
+- **extract-skill** (this repo) — Distills books (methodologies, frameworks, principles)
 - [darwin-skill](https://github.com/alchaincyf/darwin-skill) — Evolves any skill
 
-They interlock: nuwa distills people, cangjie distills books, darwin keeps them evolving.
+They interlock: nuwa distills people, extract distills books, darwin keeps them evolving.
 
 ## More Skills
 
@@ -159,10 +159,6 @@ External Source (included with the author's permission):
 
 - [book2startup](https://github.com/ace3000chao/book2startup) — includes skills distilled from *The Lean Startup*, *The Art of War*, *Zhuangzi*, and *I Ching*
 - [book2skill](https://github.com/shenqistart/book2skill) — includes AI-Agent skills distilled from *Chanlun* and *The Classic of Tea*
-
-## About the Author
-
-**kangarooking** — AI blogger, indie developer.
 
 ## License
 

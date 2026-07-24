@@ -1,6 +1,6 @@
 # GitHub Repo Metadata
 
-- Repository name: `cangjie-skill`
+- Repository name: `extract-skill`
 - Default README: `README.md`
 - Description: `A generator workflow for turning books, long videos, podcasts, and courses into reusable AI skills, with extraction, validation, templating, and skill-graph construction.`
 - Topics:

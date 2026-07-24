@@ -1,9 +1,9 @@
 ---
-name: cangjie-skill
+name: extract-skill
 description: Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to "拆书" / "蒸馏一本书" / "把 XX 书做成 skill" / "把这个视频/播客/课程蒸馏成 skill" / "turn a book or video into skills" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world situations. NOT for simple summarization, book reviews, or role-playing as the author (that is nuwa-skill's job).
 ---
 
-# cangjie-skill — 把一本书蒸馏成一组可执行 skills 的元 skill
+# extract-skill — 把一本书蒸馏成一组可执行 skills 的元 skill
 
 ## 使命
 
@@ -43,7 +43,7 @@ description: Distill a book, long-video transcript, podcast, course, or intervie
 在开始前**必须**从用户处确认:
 1. **内容文本来源**: PDF / EPUB / TXT / 字幕文件 / 转写稿路径, 或可访问的纯文本。**不要**在没有文本的情况下"凭记忆"蒸馏 — 宁可停下来问用户要。(视频/播客建议先用 video-downloader 类工具拿到转写文本)
 2. **内容元信息**: 书籍是"书名 + 作者 + 出版年"; 视频/播客/课程是"标题 + 作者(UP 主/主播/讲者) + 发布时间"。用于目录命名和审计。
-3. **是否首次试点**: 如果用户是第一次用 cangjie-skill,建议先蒸馏 1 份内容验证流程再批量。
+3. **是否首次试点**: 如果用户是第一次用 extract-skill,建议先蒸馏 1 份内容验证流程再批量。
 
 **非书籍内容的字段映射**: `source_chapter` 等"章节"字段对视频填时间戳或分 P,对播客填集数,对课程填讲次 — 保证可追溯即可。
 
@@ -154,7 +154,7 @@ books/<book-slug>/
 ## 与 nuwa-skill / darwin-skill 的生态定位
 
 - **nuwa-skill**: 蒸馏人 (思维方式 / 表达 DNA)
-- **cangjie-skill** (本 skill): 蒸馏书 (方法论 / 框架 / 原则)
+- **extract-skill** (本 skill): 蒸馏书 (方法论 / 框架 / 原则)
 - **darwin-skill**: 进化任意 skill
 
 三者咬合: 本 skill 输出的 `test-prompts.json` 严格遵循 darwin-skill 格式,以便产出的 skill 可直接接入 darwin 做自动进化。

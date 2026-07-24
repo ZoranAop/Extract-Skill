@@ -21,9 +21,9 @@
 
 而且还有一个真实的痛点：你可能看了很多书、收藏了很多视频、听过很多播客，但就是运用不起来。尤其是各大平台每天都有大量干货长视频，时效性很强，内容又很长；它们往往不可能已经被 AI 训练过，也很难靠一次观看完整吸收。把这些内容蒸馏成 skill 之后，AI agent 可以帮你在真实场景中调用这些知识，而不是让它们躺在笔记、收藏夹或稍后再看列表里落灰。
 
-所以 cangjie-skill 的目标很明确：**蒸馏所有值得蒸馏的高价值内容**。它不只适用于书，也适用于有字幕/转写文本的视频、播客、访谈、演讲、课程、长文和资料集。只要内容里存在可抽取、可验证、可迁移的方法论，就可以用 cangjie-skill 把它变成一套可独立调用、可组合使用、可压力测试的 AI skill 工具包。
+所以 extract-skill 的目标很明确：**蒸馏所有值得蒸馏的高价值内容**。它不只适用于书，也适用于有字幕/转写文本的视频、播客、访谈、演讲、课程、长文和资料集。只要内容里存在可抽取、可验证、可迁移的方法论，就可以用 extract-skill 把它变成一套可独立调用、可组合使用、可压力测试的 AI skill 工具包。
 
-如果要蒸馏视频内容，建议搭配 [video-downloader](https://github.com/kangarooking/kangarooking-skills/tree/main/video-downloader) skill 一起使用：先用它下载视频、提取字幕/音频转写和关键素材，再把得到的文本内容交给 cangjie-skill 做方法论抽取、skill 化和压力测试。
+如果要蒸馏视频内容，建议搭配 [video-downloader](https://github.com/kangarooking/kangarooking-skills/tree/main/video-downloader) skill 一起使用：先用它下载视频、提取字幕/音频转写和关键素材，再把得到的文本内容交给 extract-skill 做方法论抽取、skill 化和压力测试。
 
 ## 它解决了什么问题
 
@@ -34,7 +34,7 @@
 
 ## 它是怎么工作的
 
-cangjie-skill 使用 **RIA-TV++** 流水线，把书籍、视频转写、播客文字稿、访谈记录等原始文本变成一组结构化的 skill。整个过程分七个阶段：
+extract-skill 使用 **RIA-TV++** 流水线，把书籍、视频转写、播客文字稿、访谈记录等原始文本变成一组结构化的 skill。整个过程分七个阶段：
 
 1. **整体内容理解（Adler 分析）**——借鉴 Mortimer Adler 的分析阅读法，对整份内容做结构、解释、批判、应用四步拆解，产出 `BOOK_OVERVIEW.md`
 2. **并行提取**——同时派 5 个专项提取器（框架、原则、案例、反例、术语），从原文中提取候选方法论单元
@@ -57,7 +57,7 @@ RIA-TV++ 这个名字拆开看：
 
 "我想把一本书或一个 B 站/YouTube 长视频里的核心方法论抽成可复用的 AI skills，而不是只做摘要。"
 
-**cangjie-skill 如何判断**
+**extract-skill 如何判断**
 
 - 先看源材料是否存在可重复调用的方法论单元
 - 再区分哪些内容适合做独立 skill，哪些只适合做候选或背景
@@ -73,7 +73,7 @@ RIA-TV++ 这个名字拆开看：
 
 "我不希望这份内容只变成一个很长的说明文，我想要可以在 agent 里复用的技能包。"
 
-**cangjie-skill 如何判断**
+**extract-skill 如何判断**
 
 - 判断目标不是内容总结，而是结构化复用
 - 优先生成可触发、可组合、可测试的 skill 单元
@@ -111,7 +111,7 @@ RIA-TV++ 这个名字拆开看：
 
 ## 视频蒸馏区
 
-这些仓库来自长视频、课程或视频合集的字幕/转写文本，适合展示 cangjie-skill 对非书籍内容的方法论蒸馏能力。
+这些仓库来自长视频、课程或视频合集的字幕/转写文本，适合展示 extract-skill 对非书籍内容的方法论蒸馏能力。
 
 | 仓库 | 来源 | Skills 数 |
 |------|------|-----------|
@@ -130,12 +130,12 @@ RIA-TV++ 这个名字拆开看：
 ## 仓库结构
 
 ```text
-cangjie-skill/
+extract-skill/
 ├── README.md              ← 你正在看的
 ├── README.en.md           ← English version
 ├── README.ja.md           ← 日本語版
 ├── LICENSE                ← MIT
-├── SKILL.md               ← 元 skill 定义（cangjie-skill 的完整执行规范）
+├── SKILL.md               ← 元 skill 定义（extract-skill 的完整执行规范）
 ├── methodology/           ← RIA-TV++ 各阶段的方法论文档
 ├── extractors/            ← 5 个并行提取器的 prompt 定义
 └── templates/             ← SKILL.md / INDEX.md / BOOK_OVERVIEW.md 模板
@@ -143,13 +143,13 @@ cangjie-skill/
 
 ## 生态
 
-cangjie-skill 是一个更大的 skill 生态的一部分：
+extract-skill 是一个更大的 skill 生态的一部分：
 
 - [nuwa-skill](https://github.com/alchaincyf/nuwa-skill) — 蒸馏人（思维方式、表达 DNA）
-- **cangjie-skill**（本仓库）— 蒸馏书（方法论、框架、原则）
+- **extract-skill**（本仓库）— 蒸馏书（方法论、框架、原则）
 - [darwin-skill](https://github.com/alchaincyf/darwin-skill) — 进化任意 skill
 
-三者咬合：nuwa 蒸馏人，cangjie 蒸馏书，darwin 让它们持续进化。
+三者咬合：nuwa 蒸馏人，extract 蒸馏书，darwin 让它们持续进化。
 
 ## More Skills
 
@@ -179,14 +179,10 @@ cangjie-skill 是一个更大的 skill 生态的一部分：
 
 ## 贡献者
 
-感谢以下贡献者对 cangjie-skill 生态的补充：
+感谢以下贡献者对 extract-skill 生态的补充：
 
 - [shenqistart](https://github.com/shenqistart) — 贡献外部 [book2skill](https://github.com/shenqistart/book2skill) 引用，并补充中英日 README 更新
-- [qbdx-hub](https://github.com/qbdx-hub) — 贡献 6 个 Cangjie 整书/章节蒸馏示例仓库，并补充中英日 README 引用
-
-## 关于作者
-
-**袋鼠帝 kangarooking** — AI 博主，独立开发者。
+- [qbdx-hub](https://github.com/qbdx-hub) — 贡献 6 个 Extract 整书/章节蒸馏示例仓库，并补充中英日 README 引用
 
 ## License
 

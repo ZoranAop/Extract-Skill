@@ -1,4 +1,4 @@
-# Cangjie Skill
+# Extract Skill
 
 本を実行可能な AI スキルのセットに蒸留します。
 
@@ -10,7 +10,7 @@
 
 また、リアルなペインポイントもあります：多くの本を読んでいても、それを活用できない。知識は「読んだ」レベルに留まり、実際の意思決定で活性化されることがない。本がスキルに蒸留されれば、AIエージェントが実際のシナリオでその知識を呼び出してくれる——ノートに埃をかぶせる代わりに。
 
-だから cangjie-skill の目標は一つ：**蒸留する価値のあるすべての本を蒸留し**、それぞれの高価値な本を、独立して呼び出し可能、組み合わせ可能、ストレステスト可能な AI スキルパックに変えること。
+だから extract-skill の目標は一つ：**蒸留する価値のあるすべての本を蒸留し**、それぞれの高価値な本を、独立して呼び出し可能、組み合わせ可能、ストレステスト可能な AI スキルパックに変えること。
 
 ## 解決する問題
 
@@ -21,7 +21,7 @@
 
 ## どう動くか
 
-cangjie-skill は **RIA-TV++** パイプラインを使用して、本を生のテキストから構造化されたスキルのセットに変換します。7段階のプロセスです：
+extract-skill は **RIA-TV++** パイプラインを使用して、本を生のテキストから構造化されたスキルのセットに変換します。7段階のプロセスです：
 
 1. **全書理解（Adler分析）** — モーティマー・アドラーの分析方法で、全書を構造・解釈・批判・応用の4ステップで分解し、`BOOK_OVERVIEW.md` を生成
 2. **並行抽出** — 5つの専門エクストラクター（フレームワーク、原則、事例、反例、用語）が同時に実行され、原文から候補ユニットを抽出
@@ -44,7 +44,7 @@ RIA-TV++ の名前の由来：
 
 「本のコア方法論を再利用可能な AI スキルにしたい。読書要約ではなく。」
 
-**cangjie-skill の判断**
+**extract-skill の判断**
 
 - 元資料に再利用可能な方法論ユニットがあるか確認
 - スタンドアロンのスキルに値するものと背景情報を区別
@@ -60,7 +60,7 @@ RIA-TV++ の名前の由来：
 
 「長い説明文が欲しいのではなく、エージェントが再利用できるスキルパックが欲しい。」
 
-**cangjie-skill の判断**
+**extract-skill の判断**
 
 - 目標は構造化再利用であり、物語の圧縮ではない
 - トリガー可能、組み合わせ可能、テスト可能なスキルユニットを優先
@@ -109,12 +109,12 @@ RIA-TV++ の名前の由来：
 ## リポジトリ構造
 
 ```text
-cangjie-skill/
+extract-skill/
 ├── README.md              ← 今見ているファイル
 ├── README.en.md           ← 英語版
 ├── README.ja.md           ← 日本語版
 ├── LICENSE                ← MIT
-├── SKILL.md               ← メタスキル定義（cangjie-skill の完全な実行仕様）
+├── SKILL.md               ← メタスキル定義（extract-skill の完全な実行仕様）
 ├── methodology/           ← RIA-TV++ の段階別方法論ドキュメント
 ├── extractors/            ← 5つの並行エクストラクターのプロンプト定義
 └── templates/             ← SKILL.md / INDEX.md / BOOK_OVERVIEW.md テンプレート
@@ -122,13 +122,13 @@ cangjie-skill/
 
 ## エコシステム
 
-cangjie-skill はより大きなスキルエコシステムの一部です：
+extract-skill はより大きなスキルエコシステムの一部です：
 
 - [nuwa-skill](https://github.com/alchaincyf/nuwa-skill) — 人を蒸留する（思考スタイル、表現 DNA）
-- **cangjie-skill**（このリポジトリ）— 本を蒸留する（方法論、フレームワーク、原則）
+- **extract-skill**（このリポジトリ）— 本を蒸留する（方法論、フレームワーク、原則）
 - [darwin-skill](https://github.com/alchaincyf/darwin-skill) — 任意のスキルを進化させる
 
-これらは連携しています：nuwa は人を蒸留し、cangjie は本を蒸留し、darwin はそれらを進化させ続けます。
+これらは連携しています：nuwa は人を蒸留し、extract は本を蒸留し、darwin はそれらを進化させ続けます。
 
 ## More Skills
 
@@ -159,8 +159,6 @@ External Source（著者本人の許可を得て掲載）:
 
 - [book2startup](https://github.com/ace3000chao/book2startup) — 『リーン・スタートアップ』『孫子兵法』『荘子』『易経』を蒸留した skills を含む
 - [book2skill](https://github.com/shenqistart/book2skill) — 『纏論』『茶経』を蒸留した AI-Agent skills を含む
-
-## 作者について
 
 ## License
 

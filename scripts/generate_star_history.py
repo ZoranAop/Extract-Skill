@@ -26,7 +26,7 @@ def github_get(path: str, token: str) -> object:
         headers={
             "Accept": "application/vnd.github.star+json",
             "Authorization": f"Bearer {token}",
-            "User-Agent": "cangjie-skill-star-history",
+            "User-Agent": "extract-skill-star-history",
             "X-GitHub-Api-Version": "2026-03-10",
         },
     )
@@ -68,7 +68,7 @@ def fetch_image_data_uri(url: str) -> str:
     separator = "&" if "?" in url else "?"
     request = urllib.request.Request(
         f"{url}{separator}s=64",
-        headers={"User-Agent": "cangjie-skill-star-history"},
+        headers={"User-Agent": "extract-skill-star-history"},
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -200,7 +200,7 @@ def render_svg(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "kangarooking/cangjie-skill"))
+    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "ZoranAop/extract-skill"))
     parser.add_argument("--output", type=Path, default=Path("assets/star-history.svg"))
     args = parser.parse_args()
 
